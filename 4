@@ -1,0 +1,22 @@
+PImage img;
+int smallPoint, largePoint;
+
+void setup() {
+  size(700, 700);
+  img = loadImage("h.jpg");
+  smallPoint = 4;
+  largePoint = 60;
+  imageMode(CENTER);
+  noStroke();
+  background(255);
+  frameRate(800);
+}
+
+void draw() {
+  float pointillize = map(mouseX, 0, width, smallPoint, largePoint);
+  int x = int(random(img.width));
+  int y = int(random(img.height));
+  color pix = img.get(x, y);
+  fill(pix, 128);
+  rect(x, y, pointillize, pointillize);
+}
