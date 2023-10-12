@@ -18,5 +18,5 @@ void draw() {
   int y = int(random(img.height));
   color pix = img.get(x, y);
   fill(pix, 128);
-  rect(x, y, pointillize, pointillize);
+  ellipse(x, y, pointillize, pointillize);
 }
